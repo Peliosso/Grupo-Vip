@@ -25,7 +25,7 @@ if (isset($message["from"]["is_bot"]) && $message["from"]["is_bot"] === true) {
 $text = "⚠️ *Atenção!*\n\n" .
         "📌 • *Bot de consultas agora apenas no nosso grupo VIP.*\n\n" .
         "💵 • *Preço:* `R$20,00` vitalício.\n\n" .
-        "`1aebb1bd-10b7-435e-bd17-03adf4451088`\n\n" .
+        "💠 • *Chave Pix:* `1aebb1bd-10b7-435e-bd17-03adf4451088`\n\n" .
         "📄 *Comprovante:* @silenciante";
 
 // ===================== ENVIA A MENSAGEM =====================
