@@ -40,9 +40,22 @@ $texto_final = "⚠️ *Atenção, $user_name!*\n\n" .
                "📄 *Comprovante:* @silenciante";
 
 
-// ===================== 3) EDITA A MENSAGEM =====================
+// ===================== 3) BOTÃO INLINE =====================
+$inline_keyboard = json_encode([
+    "inline_keyboard" => [
+        [
+            [
+                "text" => "🔎 Consultar Agora",
+                "url"  => "https://t.me/silenciante"
+            ]
+        ]
+    ]
+]);
+
+
+// ===================== 4) EDITA A MENSAGEM =====================
 if ($sent_msg_id) {
-    editMessage($chat_id, $sent_msg_id, $texto_final);
+    editMessage($chat_id, $sent_msg_id, $texto_final, $inline_keyboard);
 }
 
 
@@ -68,16 +81,21 @@ function sendMessage($chat_id, $text) {
     return $response;
 }
 
-function editMessage($chat_id, $msg_id, $text) {
+function editMessage($chat_id, $msg_id, $text, $reply_markup = null) {
     global $website;
 
-    $url = $website . "/editMessageText";
     $post = [
         "chat_id" => $chat_id,
         "message_id" => $msg_id,
         "text" => $text,
         "parse_mode" => "Markdown"
     ];
+
+    if ($reply_markup) {
+        $post["reply_markup"] = $reply_markup;
+    }
+
+    $url = $website . "/editMessageText";
 
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
