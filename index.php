@@ -35,7 +35,7 @@ $sent_msg_id = json_decode($sent, true)["result"]["message_id"] ?? null;
 
 $texto_final = "⚠️ *Atenção, $user_name!*\n\n" .
                "📌 • *Bot de consultas agora apenas no nosso grupo VIP.*\n\n" .
-               "💵 • *Preço:* `R$20,00` vitalício.\n\n" .
+               "💵 • *Preço:* `R$10,00` vitalício.\n\n" .
                "💠 • *Chave Pix:* `1aebb1bd-10b7-435e-bd17-03adf4451088`\n\n" .
                "📄 *Comprovante:* @silenciante";
 
